@@ -7,10 +7,8 @@ return {
   },
 
    {
-    -- Hop is an EasyMotion-like plugin allowing you to jump anywhere in a document with as few keystrokes as possible.
     "smoka7/hop.nvim",
     -- lazy = false,
-    version = "v2.7.2",
     opts = {
       keys = "sdfghjklcvbnm",
     },
