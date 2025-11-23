@@ -53,3 +53,4 @@ vim.keymap.set('n', '<leader>bc', function()
   end
 end, { noremap = true, silent = true, desc = "compare on/off"})
 
+vim.cmd('set norelativenumber')
