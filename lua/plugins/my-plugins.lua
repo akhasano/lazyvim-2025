@@ -71,17 +71,6 @@ return {
         "cssls",
         "lua_ls",
       })
-      opts.servers = opts.servers or {}
-      opts.servers.ansiblels = {
-        cmd = { "ansible-language-server", "--stdio" },
-        filetypes = { "yaml", "yml", "ansible" },
-        settings = {
-          ansible = {
-            python = "python3", -- путь к python для Ansible, если нужно
-            lint = { enabled = true },
-          },
-        },
-      }
     end,
   },
 
