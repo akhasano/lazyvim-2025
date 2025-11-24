@@ -22,9 +22,9 @@ return {
     },
   },
 
-  {
-    "folke/snacks.nvim",
-  },
+  -- {
+  --   "folke/snacks.nvim",
+  -- },
 
   {
     -- Lightweight yet powerful formatter plugin for Neovim
