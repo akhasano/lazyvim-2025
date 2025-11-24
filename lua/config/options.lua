@@ -21,17 +21,4 @@ for group, opts in pairs(highlights) do
   vim.api.nvim_set_hl(0, group, opts)
 end
 
-local diff_enabled = false
-
-vim.keymap.set('n', '<leader>bc', function()
-  if diff_enabled then
-    vim.cmd('windo diffoff')
-    diff_enabled = false
-    vim.notify("Diff OFF")
-  else
-    vim.cmd('windo diffthis')
-    diff_enabled = true
-    vim.notify("Diff ON")
-  end
-end, { noremap = true, silent = true, desc = "compare on/off"})
 
