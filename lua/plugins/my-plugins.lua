@@ -70,6 +70,7 @@ return {
         "html",
         "cssls",
         "lua_ls",
+        "jdtls",
       })
     end,
   },
@@ -163,6 +164,10 @@ return {
         preset = "default",
         ["<Tab>"] = { "select_next", "fallback" },
         ["<S-Tab>"] = { "select_prev", "fallback" },
+        ["<CR>"] = {
+          "accept",      -- принять текущее предложение
+          "fallback",    -- если меню не открыто — обычный Enter
+        },
       },
     },
   },
