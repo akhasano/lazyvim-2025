@@ -28,7 +28,12 @@ vim.keymap.set('n', 'x', '"_x')
 vim.keymap.set("n", "<leader>bw", "<cmd> HopWord <CR>", { desc = "hint all words" })
 vim.keymap.set("n", "<leader>bj", "<cmd> HopLine <CR>", { desc = "hint line" })
 
-local blink = require("blink.cmp")
+-- отключить <Esc>j и <Esc>k
+vim.keymap.set({ "n", "v", "o" }, "<Esc>j", "<Nop>", { silent = true })
+vim.keymap.set({ "n", "v", "o" }, "<Esc>k", "<Nop>", { silent = true })
+
+
+-- local blink = require("blink.cmp")
 
 -- -- Tab — выбрать следующий
 -- vim.keymap.set("i", "<Tab>", function()
