@@ -4,6 +4,7 @@
 -- ~/.config/nvim/lua/custom/colors.lua
 -- Подключаем тему, например onedark
 vim.cmd('set norelativenumber')
+vim.cmd("colorscheme tokionight-moon")
 
 vim.lsp.config.ansiblels = {
   filetypes = { 'yaml', 'yml' }
