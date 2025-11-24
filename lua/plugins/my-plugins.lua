@@ -6,13 +6,13 @@ return {
     end,
   },
 
-   {
-    "smoka7/hop.nvim",
-    -- lazy = false,
-    opts = {
-      keys = "sdfghjklcvbnm",
-    },
-  },
+  --  {
+  --   "smoka7/hop.nvim",
+  --   -- lazy = false,
+  --   opts = {
+  --     keys = "sdfghjklcvbnm",
+  --   },
+  -- },
 
   {
     -- Super fast git decorations implemented purely in Lua.

@@ -25,8 +25,8 @@ vim.keymap.set('n', '<leader>dT', ':lua require("dap").terminate()', { desc = "T
 -- https://github.com/neovim/neovim/issues/11804#issuecomment-1113927971
 vim.keymap.set('n', 'x', '"_x')
 
-vim.keymap.set("n", "<leader>se", "<cmd> HopWord <CR>", { desc = "Hint words" })
-vim.keymap.set("n", "<leader>sE", "<cmd> HopLine <CR>", { desc = "Hint line" })
+-- vim.keymap.set("n", "<leader>se", "<cmd> HopWord <CR>", { desc = "Hint words" })
+-- vim.keymap.set("n", "<leader>sE", "<cmd> HopLine <CR>", { desc = "Hint line" })
 
 local diff_enabled = false
 
