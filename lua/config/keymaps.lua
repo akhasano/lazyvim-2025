@@ -30,21 +30,21 @@ vim.keymap.set("n", "<leader>bj", "<cmd> HopLine <CR>", { desc = "hint line" })
 
 local blink = require("blink.cmp")
 
--- Tab — выбрать следующий
-vim.keymap.set("i", "<Tab>", function()
-  if blink.is_visible() then
-    return blink.select_next()
-  else
-    return vim.api.nvim_replace_termcodes("<Tab>", true, false, true)
-  end
-end, { expr = true, silent = true })
-
--- Shift-Tab — выбрать предыдущий
-vim.keymap.set("i", "<S-Tab>", function()
-  if blink.is_visible() then
-    return blink.select_prev()
-  else
-    return vim.api.nvim_replace_termcodes("<S-Tab>", true, false, true)
-  end
-end, { expr = true, silent = true })
+-- -- Tab — выбрать следующий
+-- vim.keymap.set("i", "<Tab>", function()
+--   if blink.is_visible() then
+--     return blink.select_next()
+--   else
+--     return vim.api.nvim_replace_termcodes("<Tab>", true, false, true)
+--   end
+-- end, { expr = true, silent = true })
+--
+-- -- Shift-Tab — выбрать предыдущий
+-- vim.keymap.set("i", "<S-Tab>", function()
+--   if blink.is_visible() then
+--     return blink.select_prev()
+--   else
+--     return vim.api.nvim_replace_termcodes("<S-Tab>", true, false, true)
+--   end
+-- end, { expr = true, silent = true })
 
