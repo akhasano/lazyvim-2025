@@ -32,7 +32,6 @@ return {
     opts = {
       lazy = false,
       notify_on_error = false,
-      format_on_save = true,
       default_format_opts = {
         timeout_ms = 3000,
         async = false, -- not recommended to change
