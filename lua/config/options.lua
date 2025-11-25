@@ -21,4 +21,4 @@ for group, opts in pairs(highlights) do
   vim.api.nvim_set_hl(0, group, opts)
 end
 
-
+vim.opt.winbar = "%=%m %f"
