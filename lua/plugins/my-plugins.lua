@@ -70,6 +70,7 @@ return {
         "cssls",
         "lua_ls",
         "jdtls",
+        "helm-ls",
       })
     end,
   },
