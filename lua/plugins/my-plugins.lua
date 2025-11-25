@@ -70,7 +70,7 @@ return {
         "cssls",
         "lua_ls",
         "jdtls",
-        "helm-ls",
+        "helm_ls",
       })
     end,
   },
@@ -115,7 +115,7 @@ return {
   {
     "nvim-treesitter",
     opts = {
-      ensure_installed = { "terraform", "hcl" },
+      ensure_installed = { "terraform", "hcl", "helm" },
       highlight = { enable = true },
     },
   },
