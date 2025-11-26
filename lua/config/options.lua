@@ -3,7 +3,7 @@
 -- Add any additional options here
 -- ~/.config/nvim/lua/custom/colors.lua
 -- Подключаем тему, например onedark
-vim.cmd('set norelativenumber')
+-- vim.cmd('set norelativenumber')
 
 vim.lsp.config.ansiblels = {
   filetypes = { 'yaml', 'yml' }
