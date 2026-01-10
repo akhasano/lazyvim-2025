@@ -19,8 +19,8 @@ return {
     system_prompt = "Ты — профессиональный программист. Отвечай кратко и по делу на языке пользователя.",
     providers = {
       ollama = {
-        endpoint = "http://127.0.0.1:11434", -- Note that there is no /v1 at the end.
-        model = "deepseek-coder-v2:16b",
+        endpoint = "http://192.168.104.100:11434", -- Note that there is no /v1 at the end.
+        model = "qwen3:14b",
       },
     },
   },
