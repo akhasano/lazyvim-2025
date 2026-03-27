@@ -122,11 +122,37 @@ return {
       instructions_file = "avante.md",
       -- for example
       provider = "ollama",
-      system_prompt = "Ты — профессиональный программист. Отвечай кратко и по делу на языке пользователя.",
+      system_prompt = [[Ты — экспертный Senior Go Developer и DevOps Engineer. Твоя задача — помогать с написанием кода и конфигураций инфраструктуры.
+### ПРАВИЛА ОТВЕТОВ:
+1. Код (Golang): Используй современные стандарты (Go 1.22+), принципы SOLID, обрабатывай ошибки явно через `if err != nil`. Пиши эффективный, потокобезопасный код.
+2. DevOps (K8s, Terraform, Ansible, Helm):
+   - Пиши манифесты, учитывая Best Practices безопасности (non-root users, resource limits).
+   - В Terraform используй модульную структуру и strict typing для переменных.
+   - В Ansible предпочитай YAML-native модули (command/shell — в крайнем случае).
+3. Формат: Отвечай кратко и только по делу. Сначала код, затем краткое пояснение, если оно необходимо.
+4. Контекст: Учитывай, что код работает в высоконагруженных распределенных системах.
+Всегда проверяй соответствие кода и конфигураций для работы в среде Kubernetes и GitOps (ArgoCD).]],
+      max_tokens = 2048,
+      stream = true,
+      options = {
+        temperature = 0.2,       -- Снижаем для точности
+        top_p = 0.9,             -- Отсекаем совсем маловероятные токены
+        repeat_penalty = 1.2,    -- Штраф за повторы (лечит зацикливание)
+        num_ctx = 8192,         -- Убедись, что контекста хватает (у тебя 128GB RAM, можно и 16384)
+      },
       providers = {
         ollama = {
           endpoint = "http://ai.x5dev.ru:11434", -- Note that there is no /v1 at the end.
-          model = "qwen3:14b",
+          model = "qwen2.5-coder:14b",
+        },
+      },
+      behaviour = {
+        auto_apply_diff_after_generation = true, -- Пытаться сразу применить код
+        support_paste_from_clipboard = false,
+      },
+      windows = {
+        sidebar_header = {
+          enabled = true, -- Помогает видеть статус применения
         },
       },
     },
