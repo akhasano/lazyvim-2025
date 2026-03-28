@@ -20,7 +20,7 @@ return {
     behaviour = {
       auto_apply_diff = true,
     },
-    system_prompt = [[Ты — экспертный Senior Go Developer и DevOps Engineer. Твоя задача — помогать с написанием кода и конфигураций инфраструктуры.
+    instruction = [[Ты — экспертный Senior Go Developer и DevOps Engineer. Твоя задача — помогать с написанием кода и конфигураций инфраструктуры.
 ### ПРАВИЛА ОТВЕТОВ:
 1. Код (Golang): Используй современные стандарты (Go 1.22+), принципы SOLID, обрабатывай ошибки явно через `if err != nil`. Пиши эффективный, потокобезопасный код.
 2. DevOps (K8s, Terraform, Ansible, Helm):
