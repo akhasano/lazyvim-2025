@@ -33,6 +33,7 @@ for group, opts in pairs(highlights) do
 end
 
 vim.opt.winbar = "%=%m %f"
+vim.opt.ttimeoutlen = 0
 
 -- Recommended Neovim options - avante.nvim
 -- views can only be fully collapsed with the global statusline
