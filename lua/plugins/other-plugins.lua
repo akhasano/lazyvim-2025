@@ -30,4 +30,13 @@ return {
 			vim.cmd("colorscheme material-darker")
 		end,
 	},
+	{
+		"folke/snacks.nvim",
+		opts = {
+			terminal = {
+				-- указываем явно, что нам не нужны разные терминалы для разных корней
+				win = { style = "terminal" },
+			},
+		},
+	},
 }
