@@ -22,6 +22,7 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		opts = {
 			ensure_installed = {
+				"codelldb",
 				"shfmt",
 				"shellcheck",
 				"stylua",
@@ -32,7 +33,7 @@ return {
 				"yamllint",
 			},
 			auto_update = false,
-			run_on_start = true,
+			run_on_start = false,
 		},
 	},
 }

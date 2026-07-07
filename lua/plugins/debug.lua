@@ -1,5 +1,47 @@
 return {
 	{
+		"mfussenegger/nvim-dap",
+		lazy = true,
+		config = function()
+			local dap = require("dap")
+
+			-- C/C++ adapter via codelldb
+			dap.adapters.codelldb = {
+				type = "server",
+				port = "${port}",
+				executable = {
+					command = vim.fn.exepath("codelldb"),
+					args = {"--port", "${port}"},
+				},
+			}
+
+			dap.configurations.c = {
+				{
+					name = "Launch C",
+					type = "codelldb",
+					request = "launch",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.expand("%:p:h") .. "/", "executable")
+					end,
+					cwd = "${workspaceFolder}",
+				},
+			}
+
+			dap.configurations.cpp = {
+				{
+					name = "Launch C++",
+					type = "codelldb",
+					request = "launch",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.expand("%:p:h") .. "/", "executable")
+					end,
+					cwd = "${workspaceFolder}",
+				},
+			}
+		end,
+	},
+
+	{
 		"mfussenegger/nvim-dap-python",
 		ft = "python",
 		dependencies = { "mfussenegger/nvim-dap" },
@@ -21,7 +63,7 @@ return {
 		"rcarriga/nvim-dap-ui",
 		dependencies = {
 			"mfussenegger/nvim-dap",
-			"nvim-neotest/nvim-nio", -- <--- вот эта строка
+			"nvim-neotest/nvim-nio",
 		},
 		config = function()
 			local dap, dapui = require("dap"), require("dapui")
@@ -38,9 +80,5 @@ return {
 				dapui.close()
 			end
 		end,
-	},
-	{
-		"mfussenegger/nvim-dap",
-		lazy = true,
 	},
 }

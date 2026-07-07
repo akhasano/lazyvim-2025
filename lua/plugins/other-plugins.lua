@@ -1,10 +1,13 @@
 return {
 
 	{
-		"snacks.nvim",
+		"folke/snacks.nvim",
 		opts = {
 			dashboard = {
 				enabled = false,
+			},
+			terminal = {
+				win = { style = "terminal" },
 			},
 		},
 	},
@@ -17,8 +20,8 @@ return {
 				["<Tab>"] = { "select_next", "fallback" },
 				["<S-Tab>"] = { "select_prev", "fallback" },
 				["<CR>"] = {
-					"accept", -- принять текущее предложение
-					"fallback", -- если меню не открыто — обычный Enter
+					"accept",
+					"fallback",
 				},
 			},
 		},
@@ -29,14 +32,5 @@ return {
 		config = function()
 			vim.cmd("colorscheme material-darker")
 		end,
-	},
-	{
-		"folke/snacks.nvim",
-		opts = {
-			terminal = {
-				-- указываем явно, что нам не нужны разные терминалы для разных корней
-				win = { style = "terminal" },
-			},
-		},
 	},
 }
